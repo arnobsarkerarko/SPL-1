@@ -1,0 +1,147 @@
+PS C:\Users\User\SPL-1> git status
+On branch feature
+Your branch is up to date with 'origin/feature'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\User\SPL-1> git diff
+diff --git a/README.md b/README.md
+index e483483..b9a4489 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,3 @@
+ # SPL-1
+ I wanna put the information about that share that
++practicing Git branching and merging
+\ No newline at end of file
+PS C:\Users\User\SPL-1> git add README.md
+PS C:\Users\User\SPL-1> git status
+On branch feature
+Your branch is up to date with 'origin/feature'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+PS C:\Users\User\SPL-1> git status
+On branch feature
+Your branch is up to date with 'origin/feature'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+PS C:\Users\User\SPL-1> git diff
+PS C:\Users\User\SPL-1> git add README.md
+PS C:\Users\User\SPL-1> git status
+On branch feature
+Your branch is up to date with 'origin/feature'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+PS C:\Users\User\SPL-1> git commit -m "Updated README.md on feature branch"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'User@LAPTOP-CGV931VV.(none)')
+PS C:\Users\User\SPL-1> git config user.name"Arnob Sarker Arko"
+error: invalid key: user.nameArnob Sarker Arko
+PS C:\Users\User\SPL-1> git config user.email"bsse1751@iit.du.ac.bd"
+PS C:\Users\User\SPL-1> git commit -m" Updated README.md on feature branch" 
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'User@LAPTOP-CGV931VV.(none)')
+PS C:\Users\User\SPL-1> git config user.name "Arnob Sarker Arko"
+PS C:\Users\User\SPL-1> git config user.email "bsse1751@iit.du.ac.bd"
+PS C:\Users\User\SPL-1> git config user.name
+Arnob Sarker Arko
+PS C:\Users\User\SPL-1> git config user.email   
+bsse1751@iit.du.ac.bd
+PS C:\Users\User\SPL-1> git commit -m "Updated README.md on feature branch"
+[feature 1a276cb] Updated README.md on feature branch
+ 1 file changed, 1 insertion(+)
+PS C:\Users\User\SPL-1> git push -u origin feature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 366 bytes | 366.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/arnobsarkerarko/SPL-1.git
+   4f32b61..1a276cb  feature -> feature
+branch 'feature' set up to track 'origin/feature'.
+PS C:\Users\User\SPL-1> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\User\SPL-1> git branch
+  feature
+* main
+PS C:\Users\User\SPL-1> git merge feature
+Updating 4f32b61..1a276cb
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+PS C:\Users\User\SPL-1> git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/arnobsarkerarko/SPL-1.git
+   4f32b61..1a276cb  main -> main
+PS C:\Users\User\SPL-1> git switch main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\User\SPL-1> git merge feature
+Already up to date.
+PS C:\Users\User\SPL-1> git push origin main
+Everything up-to-date
+PS C:\Users\User\SPL-1> git merge feature
+Already up to date.
+PS C:\Users\User\SPL-1> git log --all --graph
+* commit 1a276cbdeca1426a13cca45d12f2960a638a20e5 (HEAD -> main, origin/main, origin/feature, origin/HEAD, feature)
+| Author: Arnob Sarker Arko <bsse1751@iit.du.ac.bd>
+| Date:   Wed Sep 30 20:48:08 2026 +0600
+| 
+|     Updated README.md on feature branch
+| 
+* commit 4f32b61a42212d60ac73282bee961fdd4161c8fc
+| Author: arnobsarkerarko <bsse1751@iit.du.ac.bd>
+| Date:   Tue Sep 22 11:50:51 2026 +0600
+| 
+|     Add files via upload
+| 
+* commit b4dd19b7813c1c2523ff151f4d580fbb6d76112f
+  Author: arnobsarkerarko <bsse1751@iit.du.ac.bd>
+  Date:   Thu Sep 10 20:54:36 2026 +0600
+  
+      Initial commit
+PS C:\Users\User\SPL-1> git branch -a
+  feature
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/feature
+  remotes/origin/main
+PS C:\Users\User\SPL-1> 
